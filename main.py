@@ -19,6 +19,7 @@ ARTIST_NAME = "Grace Calver"
 ARTIST_NAME = "Thea Gilmore"
 ARTIST_NAME = "Katherine Priddy"
 ARTIST_NAME = "Daniel Stephen Turner"
+ARTIST_NAME = "PET NEEDS"
 
 
 dotenv.load_dotenv()
@@ -46,6 +47,8 @@ MusicBrainz data: {sources.get('musicbrainz', [])}
 OpenAI data: {sources.get('openai', '')}
 
 Synthesize this information into a single, accurate discography using schema.org JSON-LD format. Include MusicAlbum and MusicRecording objects where appropriate. Ensure dates are accurate, remove duplicates, and organize chronologically.
+
+Separate singles and albums into separate lists within the JSON-LD structure, with keys 'albums' and 'singles'.
 
 Return only the JSON-LD objects without any additional text.
 """
