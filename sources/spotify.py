@@ -51,7 +51,7 @@ def get_discography(artist_name):
     artist = results['artists']['items'][0] # type: ignore
     artist_id = artist['id']
 
-    print(f"Spotify: found artist: {artist['name']} (ID: {artist_id})")
+    # print(f"Spotify: found artist: {artist['name']} (ID: {artist_id})")
 
     # Get all albums for the artist
     albums = []
