@@ -12,7 +12,7 @@ from pprint import pprint
 import dotenv
 import openai
 
-from sources import (musicbrainz, openai as openai_source, spotify)
+from sources import (itunes, musicbrainz, openai as openai_source, spotify)
 
 
 # ARTIST_NAME = "Fraser Morgan"
@@ -44,6 +44,8 @@ def consolidate_discography(artist_name: str, **sources: dict) -> str:
 Spotify data: {sources.get('spotify', [])}
 
 MusicBrainz data: {sources.get('musicbrainz', [])}
+
+iTunes data: {sources.get('itunes', [])}
 
 OpenAI data: {sources.get('openai', '')}
 
@@ -79,6 +81,7 @@ if __name__ == "__main__":
 
     sources['spotify'] = spotify.get_discography(artist_name)
     sources['musicbrainz'] = musicbrainz.get_discography(artist_name)
+    sources['itunes'] = itunes.get_discography(artist_name)
     # sources['openai'] = openai_source.get_discography(artist_name)
     # print(sources)
     # sys.exit(0)
