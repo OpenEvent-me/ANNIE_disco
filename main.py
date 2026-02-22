@@ -79,7 +79,7 @@ if __name__ == "__main__":
 
     sources['spotify'] = spotify.get_discography(artist_name)
     sources['musicbrainz'] = musicbrainz.get_discography(artist_name)
-    sources['openai'] = openai_source.get_discography(artist_name)
+    # sources['openai'] = openai_source.get_discography(artist_name)
     # print(sources)
     # sys.exit(0)
     # Consolidate
