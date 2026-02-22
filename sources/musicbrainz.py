@@ -17,15 +17,15 @@ def get_discography(artist_name):
 
     try:
         # Search for the artist
-        result = musicbrainzngs.search_artists(query='artist:"Daniel Stephen Turner"', limit=1)
+        result = musicbrainzngs.search_artists(query=f'artist:"{artist_name}"', limit=1)
         if not result['artist-list']:
-            print(f"Musicbrainz: No artist found for '{artist_name}'")
+            # print(f"Musicbrainz: No artist found for '{artist_name}'")
             return []
 
         artist = result['artist-list'][0]
         artist_id = artist['id']
 
-        print(f"Musikbrainz: found artist: {artist['name']} (ID: {artist_id})")
+        # print(f"Musicbrainz: found artist: {artist['name']} (ID: {artist_id})")
 
         # Get releases for the artist
         releases_result = musicbrainzngs.browse_releases(artist=artist_id, release_type=['album', 'single', 'ep'], limit=50)
