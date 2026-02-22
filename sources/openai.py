@@ -21,16 +21,16 @@ def get_discography(artist_name):
     Return only JSON-LD objects without any additional text.
     """
 
-    print("Calling OpenAI with prompt")
+    # print("Calling OpenAI with prompt")
 
     response = openai.chat.completions.create(
-        model=os.getenv('OPENAI_MODEL', 'gpt-4'),
+        model=os.getenv('OPENAI_MODEL', 'gpt-5-nano'),
         messages=[
             {"role": "system", "content": "You are a knowledgeable music historian."},
             {"role": "user", "content": prompt}
         ],
-        max_tokens=1000,
-        temperature=0.7,
+        max_completion_tokens=1000,
+        # temperature=0.7,
 
     )
 
